@@ -1,0 +1,6 @@
+class SubscriptionService {
+    def addDefaultSubscription()
+    {
+
+    }
+}
