@@ -1,4 +1,3 @@
-import org.grails.web.util.WebUtils
 
 class LoginController {
     def index()

@@ -1,3 +1,4 @@
+
 class User {
     //failonerror
     String firstName
@@ -35,5 +36,25 @@ class User {
         isAdmin nullable : true
         userName unique : true, nullable : false, blank : false
         image maxSize : 2*1024*1024
+    }
+    static mapping = {
+        sort userName: "desc"
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", isActive=" + isActive +
+                ", isAdmin=" + isAdmin +
+                ", dateCreated=" + dateCreated +
+                ", lastUpdated=" + lastUpdated +
+                ", topics=" + topics +
+                ", subscriptions=" + subscriptions +
+                '}'
     }
 }

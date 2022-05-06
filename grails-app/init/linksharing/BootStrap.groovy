@@ -1,3 +1,4 @@
+import com.sun.javadoc.Doc
 import enums.Seriousness
 import enums.Visibility
 
@@ -91,7 +92,7 @@ class BootStrap {
             topic5.save()
         }
         Topic topic = user.topics[1]
-        if (topic.resources.isEmpty()) {
+        if (topic.resources == null) {
             DocumentResource documentResource1 = new DocumentResource(filePath: '/abc/xyz', createdBy: topic.createdBy, description: topic.name, topic: topic)
             documentResource1.validate()
             if (documentResource1.hasErrors()) {
@@ -113,11 +114,35 @@ class BootStrap {
             LinkResource linkResourse2 = new LinkResource(url: 'https://www.instagram.com/', createdBy: topic.createdBy, description: topic.name, topic: topic)
             linkResourse2.validate()
             if (linkResourse2.hasErrors()) {
-                println linkResourse2.errors
+                printlnt linkResourse2.errors
             }
             linkResourse2.save()
         }
+/*        DocumentResource resource = new DocumentResource()
+        resource.setDescription(topic.name)
+        resource.setTopic(topic)
+        resource.setCreatedBy(topic.createdBy)
+        resource.setFilePath('/abc/abc/file.txt')
+        resource.save()
+        LinkResource linkResource = new LinkResource()
+        linkResource.setDescription(topic.name)
+        linkResource.setTopic(topic)
+        linkResource.setCreatedBy(topic.createdBy)
+        linkResource.setUrl('https://www.instagram.com/')
+        linkResource.save()*/
         //change logback.xml to .groovy
+/*        println user.userName
+        Resource resource = new LinkResource()
+        Topic topic1 = new Topic(name: 'Groovy', visibility: Visibility.PUBLIC, createdBy: user)
+        //resource.addToCreatedBy(user)
+        //resource.createdBy(user)
+        //resource.createdBy(topic1.createdBy)
+        resource.setCreatedBy(topic1.createdBy)
+        //resource.createdBy = topic1.createdBy
+        resource.setTopic(topic1)
+        resource.setDescription(topic1.name)
+        topic1.save()
+        resource.save()*/
     }
         def destroy = {
         }

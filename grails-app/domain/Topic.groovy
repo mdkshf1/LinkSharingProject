@@ -31,4 +31,7 @@ class Topic {
                 ", createdBy=" + createdBy.fullName +
                 '}';
     }
+    static mapping = {
+        sort "name"
+    }
 }

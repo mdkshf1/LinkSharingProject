@@ -10,7 +10,7 @@ class ApplicationInterceptor {
         match controller: "Util", action: "index"
     }
     boolean before() {
-        def users = User.findByUserName(params.username)
+      /*  def users = User.findByUserName(params.username)
         User user = users[0]
         if (user.topics == null)
         {
@@ -20,7 +20,7 @@ class ApplicationInterceptor {
         else {
             //to check every topic??
         }
-        if (user.su)
+        //if (user.su)*/
         true
     }
 

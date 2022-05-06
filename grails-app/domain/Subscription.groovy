@@ -14,4 +14,5 @@ class Subscription implements Serializable{
         //supposed to make a composite PK
         id composite:['topic', 'user']
     }
+    static fetchMode = [user: 'eager',topic: 'eager']
 }
